@@ -1,6 +1,12 @@
 'use client';
 
-import { Episode } from '@/lib/types';
+interface Episode {
+  id: string;
+  title: string;
+  episodeNumber?: number;
+  url: string;
+  slug?: string;
+}
 
 interface EpisodeSelectorProps {
   episodes: Episode[];
