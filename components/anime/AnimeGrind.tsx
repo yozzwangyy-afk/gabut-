@@ -1,5 +1,5 @@
 import AnimeCard from './AnimeCard';
-import { Anime } from '@/lib/types';
+import { Anime } from 'lib/types';
 
 interface AnimeGridProps {
   animeList: Anime[];
