@@ -1,6 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Anime } from '@/lib/types';
+
+interface Anime {
+  id: string;
+  slug: string;
+  title: string;
+  poster: string;
+  rating?: string;
+  type?: string;
+  total_episode?: string;
+  url: string;
+  status?: string;
+  duration?: string;
+}
 
 interface AnimeCardProps {
   anime: Anime;
@@ -36,7 +48,7 @@ export default function AnimeCard({
   const slug = anime.url.split('/').pop() || anime.slug;
 
   return (
-    <Link href={`/anime/${slug}`}>
+    <Link href={`/anime/${slug}`} className="block">
       <div className={`group relative overflow-hidden rounded-xl bg-gray-800 hover:bg-gray-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 ${getSizeClasses()}`}>
         {/* Poster Container */}
         <div className="aspect-[3/4] relative overflow-hidden">
